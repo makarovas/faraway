@@ -1,3 +1,6 @@
+to init project use: 
+## npm i --legacy-peer-deps
+
 ## Available Scripts
 
 In the project directory, you can run:
