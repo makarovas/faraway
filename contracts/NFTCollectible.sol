@@ -1,6 +1,5 @@
-// contracts/NFT.sol
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -43,8 +42,7 @@ contract NFTCollectible is ERC721Enumerable, Ownable {
         uint totalMinted = _tokenIds.current();
 
         require(totalMinted.add(_count) <= MAX_SUPPLY, "Not enough NFTs left!");
-        require(_count >0 && _count <= MAX_PER_MINT, 
-        "Cannot mint specified number of NFTs.");
+        require(_count >0 && _count <= MAX_PER_MINT, "Cannot mint specified number of NFTs.");
         require(msg.value >= PRICE.mul(_count), "Not enough ether to purchase NFTs.");
 
         for (uint i = 0; i < _count; i++) {
